@@ -1,7 +1,9 @@
 // Create variables targetting the relevant DOM elements here 👇
-
-// var newUserBook;
 var currentCover;
+var savedCovers = [
+  createCover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+];
+
 //Cover elements
 var randomTitle = document.querySelector('.cover-title');
 var window = document.querySelector('html')
@@ -9,7 +11,7 @@ var randomDescriptor1 = document.querySelector('.tagline-1');
 var randomDescriptor2 = document.querySelector(`.tagline-2`);
 var image = document.querySelector('.cover-image');
 
-// Buttons
+//buttons
 var randomCoverButton = document.querySelector('.random-cover-button');
 var homeButton = document.querySelector('.home-button');
 var makeCoverButton = document.querySelector('.make-new-button');
@@ -29,11 +31,6 @@ var userTitle = document.querySelector('#title');
 var userDesc1 = document.querySelector('#descriptor1');
 var userDesc2 = document.querySelector('#descriptor2');
 
-// We've provided a few variables below
-var savedCovers = [
-  createCover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
-
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', displayNewCover);
 window.addEventListener('load', displayNewCover)
@@ -49,7 +46,6 @@ createNewBookButton.addEventListener('click', function(event) {
 savedCoversSection.addEventListener('dblclick', removeCover)
 
 // Create your event handlers and other functions here 👇
-
 function displayNewCover() {
     currentCover = createCover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
     displayMadeCover();
@@ -136,7 +132,6 @@ function saveCover() {
   return savedCovers
 }
 
-// We've provided two functions to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
