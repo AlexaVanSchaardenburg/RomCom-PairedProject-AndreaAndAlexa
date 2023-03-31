@@ -48,17 +48,11 @@ createNewBookButton.addEventListener('click', function(event) {
   displayMadeCover()
 });
 
-// /* do we create a new function that uses getRandomIndex function as callback?*/
-
 // Create your event handlers and other functions here 👇
+
 function displayNewCover() {
-    currentCover = createCover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
-    displayMadeCover()
-    // randomTitle.innerText = titles[getRandomIndex(titles)];
-    // randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)];
-    // randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)];
-    // image.src = covers[getRandomIndex(covers)];
-    // currentCover = createCover()
+    currentCover = createCover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+    displayMadeCover();
 };
 
 function displayMadeCover(){
@@ -113,28 +107,18 @@ function displaySavedCovers(){
 }
 
 function makeUserBook() {
-  // newUserBook = {
-  //   id: Date.now(),
-// image.src = userCover.value,
-  //   title: randomTitle.innerText = userTitle.value,
-  //   tagline1: randomDescriptor1.innerText = userDesc1.value,
-  //   tagline2: randomDescriptor2.innerText = userDesc2.value
-  // };
   currentCover = createCover(userCover.value, userDesc2.value, userDesc1.value, userDesc2.value)
-  console.log(currentCover)
-  // saveUserInputs();
+  saveUserInputs();
   switchToHome();
   return currentCover
 }
 
-// function saveUserInputs() {
-//   // covers.push(userCover.value);
-//   // titles.push(userTitle.value);
-//   // descriptors.push(userDesc1.value);
-//   // descriptors.push(userDesc2.value);
-//   image
-//   randomTitle.innerText = userDesc2.value
-// }
+function saveUserInputs() {
+  covers.push(userCover.value);
+  titles.push(userTitle.value);
+  descriptors.push(userDesc1.value);
+  descriptors.push(userDesc2.value);
+}
 
 function saveCover() {
   console.log({currentCover})
