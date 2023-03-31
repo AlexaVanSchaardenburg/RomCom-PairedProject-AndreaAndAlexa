@@ -13,7 +13,7 @@
 - This url accesses the site and all functionality. If the user wants to edit the application they can fork and clone the repository from GitHub
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-	[View of saved cover library on website with custom covers](https://photos.google.com/search/_tra_/photo/AF1QipOWqnXV7kCQlSLvSaFuIGqOnqbOXUTAC84BBco2)
+![Screenshot 2023-03-31 at 4 42 56 PM](https://user-images.githubusercontent.com/125763236/229249388-5dee811c-bff5-4715-9493-8721dc728898.png)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
