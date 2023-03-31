@@ -2,7 +2,6 @@
 
 // var newUserBook;
 var currentCover;
-var miniCover = document.querySelector('.mini-cover')
 //Cover elements
 var randomTitle = document.querySelector('.cover-title');
 var window = document.querySelector('html')
@@ -113,7 +112,6 @@ function removeCover(event){
       savedCovers.splice(i,1)
     }
   }
-  console.log(event.target.id)
   displaySavedCovers()
 }
 
