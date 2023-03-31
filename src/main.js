@@ -2,7 +2,7 @@
 
 // var newUserBook;
 var currentCover;
-
+var miniCover = document.querySelector('.mini-cover')
 //Cover elements
 var randomTitle = document.querySelector('.cover-title');
 var window = document.querySelector('html')
@@ -47,6 +47,7 @@ createNewBookButton.addEventListener('click', function(event) {
   makeUserBook()
   displayMadeCover()
 });
+savedCoversSection.addEventListener('dblclick', removeCover)
 
 // Create your event handlers and other functions here 👇
 
@@ -91,28 +92,29 @@ function switchToMakeCovers(){
 }
 
 function displaySavedCovers(){
-  console.log(savedCovers)
   savedCoversSection.innerHTML = '';
-  for (var i = 0; i < savedCovers.length; i++) {
-    savedCoversSection.innerHTML +=
-    // `
-    // <section class="mini-cover">
-    // <img class="cover-image" src="${savedCovers[i].coverImg}">
-    // <h2 class="cover-title">${savedCovers[i].title}</h2>
-    // <h3 class="tagline">A tale of <span class="${savedCovers[i].tagline1}">passion</span> and <span class="${savedCovers[i].tagline2}"</h3>
-    // <img class="price-tag" src="./assets/price.png">
-    // <img class="overlay" src="./assets/overlay.png">
-    // `
-    `
-<section class="mini-cover">
-      <section class="main-cover">
-        <img class="cover-image" src="${savedCovers[i].coverImg}">
-        <h2 class="cover-title">${savedCovers[i].title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline1}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png"></img>
-`
+    for (var i = 0; i < savedCovers.length; i++) {
+      savedCoversSection.innerHTML +=
+       `
+        <section class="mini-cover" id="${savedCovers[i].id}">
+          <img class="cover-image" src="${savedCovers[i].coverImg}">
+          <h2 class="cover-title">${savedCovers[i].title}</h2>
+          <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline1}</span></h3>
+          <img class="price-tag" src="./assets/price.png">
+          <img class="overlay" src="./assets/overlay.png"></img>
+        </section>
+       `
+      }
+    }
+
+function removeCover(event){
+  for (var i=0; i<savedCovers.length; i++){
+    if(event.target.parentNode.id === `${savedCovers[i].id}`){
+      savedCovers.splice(i,1)
+    }
   }
+  console.log(event.target.id)
+  displaySavedCovers()
 }
 
 function makeUserBook() {
@@ -130,7 +132,6 @@ function saveUserInputs() {
 }
 
 function saveCover() {
-  console.log({currentCover})
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
   }
