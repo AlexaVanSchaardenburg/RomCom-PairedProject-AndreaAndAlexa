@@ -95,19 +95,28 @@ function displaySavedCovers(){
   savedCoversSection.innerHTML = '';
   for (var i = 0; i < savedCovers.length; i++) {
     savedCoversSection.innerHTML +=
+    // `
+    // <section class="mini-cover">
+    // <img class="cover-image" src="${savedCovers[i].coverImg}">
+    // <h2 class="cover-title">${savedCovers[i].title}</h2>
+    // <h3 class="tagline">A tale of <span class="${savedCovers[i].tagline1}">passion</span> and <span class="${savedCovers[i].tagline2}"</h3>
+    // <img class="price-tag" src="./assets/price.png">
+    // <img class="overlay" src="./assets/overlay.png">
+    // `
     `
-    <section class="mini-cover">
-    <img class="cover-image" src="${savedCovers[i].coverImg}">
-    <h2 class="cover-title">${savedCovers[i].title}</h2>
-    <h3 class="tagline">A tale of <span class="${savedCovers[i].tagline1}">passion</span> and <span class="${savedCovers[i].tagline2}"</h3>
-    <img class="price-tag" src="./assets/price.png">
-    <img class="overlay" src="./assets/overlay.png">
-    `
+<section class="mini-cover">
+      <section class="main-cover">
+        <img class="cover-image" src="${savedCovers[i].coverImg}">
+        <h2 class="cover-title">${savedCovers[i].title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline1}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png"></img>
+`
   }
 }
 
 function makeUserBook() {
-  currentCover = createCover(userCover.value, userDesc2.value, userDesc1.value, userDesc2.value)
+  currentCover = createCover(userCover.value, userTitle.value, userDesc1.value, userDesc2.value)
   saveUserInputs();
   switchToHome();
   return currentCover
